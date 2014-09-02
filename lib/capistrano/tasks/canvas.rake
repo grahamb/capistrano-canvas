@@ -33,7 +33,7 @@ namespace :canvas do
         with rails_env: fetch(:rails_env) do
           user = fetch(:user)
           execute :rake, 'canvas:compile_assets[false]'
-          execute :chown, '-R', "#{user}:#{user}, '.'
+          execute :chown, '-R', "#{user}:#{user}", '.'
         end
       end
     end
