@@ -30,8 +30,11 @@ namespace :canvas do
   task :compile_assets => :npm_install do
     on roles(:all) do
       within release_path do
-        execute :rake, 'canvas:compile_assets[false]'
-        execute :chown, '-R', 'canvasuser:canvasuser', '.'
+        with rails_env: fetch(:rails_env) do
+          user = fetch(:user)
+          execute :rake, 'canvas:compile_assets[false]'
+          execute :chown, '-R', "#{user}:#{user}, '.'
+        end
       end
     end
   end
