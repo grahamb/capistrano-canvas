@@ -11,7 +11,7 @@ namespace :canvas do
   task :clone_qtimigrationtool do
     on roles(:all) do
       within release_path do
-        execute :git, 'clone', 'https://github.com/instructure/QTIMigrationTool.git', 'QTIMigrationTool'
+        execute :git, 'clone', 'https://github.com/instructure/QTIMigrationTool.git', 'vendor/QTIMigrationTool'
       end
     end
   end
