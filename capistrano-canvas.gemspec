@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |gem|
   gem.name          = "capistrano-canvas"
-  gem.version       = '1.0.2'
+  gem.version       = '1.0.3'
   gem.authors       = ["Graham Ballantyne"]
   gem.email         = ["grahamb@sfu.ca"]
   gem.description   = %q{canvas-lms deploy tasks for Capistrano}
