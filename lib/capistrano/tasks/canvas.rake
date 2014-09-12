@@ -86,16 +86,12 @@ namespace :canvas do
       invoke 'canvas:clone_qtimigrationtool'
       invoke 'canvas:symlink_canvasfiles'
       invoke 'canvas:migrate_predeploy'
+      invoke 'canvas:compile_assets'
     end
 
     desc "Tasks that run after _updated_"
     task :after_updated do
       invoke 'canvas:load_notifications'
-    end
-
-    desc "Tasks that run before _published_"
-    task :before_published do
-      invoke 'canvas:compile_assets'
     end
 
     desc "Tasks that run after _published_"
