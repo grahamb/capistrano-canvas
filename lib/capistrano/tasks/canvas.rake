@@ -90,8 +90,12 @@ namespace :canvas do
 
     desc "Tasks that run after _updated_"
     task :after_updated do
-      invoke 'canvas:compile_assets'
       invoke 'canvas:load_notifications'
+    end
+
+    desc "Tasks that run before _published_"
+    task :before_published do
+      invoke 'canvas:compile_assets'
     end
 
     desc "Tasks that run after _published_"
