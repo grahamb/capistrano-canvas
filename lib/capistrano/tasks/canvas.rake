@@ -80,10 +80,10 @@ namespace :canvas do
     desc "Tasks that need to run before _updated_"
     task :before_updated do
       invoke 'canvas:copy_config'
-      invoke 'canvas:clone_qtimigrationtool'
+      # invoke 'canvas:clone_qtimigrationtool'
       invoke 'canvas:symlink_canvasfiles'
       invoke 'canvas:migrate_predeploy'
-      invoke 'canvas:compile_assets'
+      # invoke 'canvas:compile_assets'
     end
 
     desc "Tasks that run after _updated_"
@@ -95,7 +95,7 @@ namespace :canvas do
     task :after_published do
       invoke 'canvas:create_tmp'
       invoke 'deploy:restart'
-      invoke 'canvas:delayed_jobs:start'
+      invoke 'canvas:delayed_jobs:restart'
       invoke 'canvas:log_deploy'
     end
 
