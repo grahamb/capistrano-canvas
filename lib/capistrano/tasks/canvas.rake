@@ -80,6 +80,7 @@ namespace :canvas do
     desc "Tasks that need to run before _updated_"
     task :before_updated do
       invoke 'canvas:copy_config'
+      invoke 'canvas:fix_owner'
       # invoke 'canvas:clone_qtimigrationtool'
       invoke 'canvas:symlink_canvasfiles'
       invoke 'canvas:migrate_predeploy'
