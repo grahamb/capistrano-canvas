@@ -1,4 +1,4 @@
-namespace :canvas do 
+namespace :canvas do
 
   desc "Create tmp directory"
   task :create_tmp do
@@ -12,6 +12,15 @@ namespace :canvas do
     on roles(:all) do
       within release_path do
         execute :git, 'clone', 'https://github.com/instructure/QTIMigrationTool.git', 'vendor/QTIMigrationTool'
+      end
+    end
+  end
+
+  desc "Clone Analytics"
+  task :clone_analytics do
+    on roles(:all) do
+      within release_path do
+        execute :git, 'clone', 'https://github.com/instructure/analytics.git', 'gems/plugins/analytics'
       end
     end
   end
