@@ -73,7 +73,7 @@ namespace :canvas do
       desc "#{command} the delayed_jobs processor"
       task command do
         on roles(:db) do
-          execute "sudo /etc/init.d/canvas_init #{command}"
+          execute "/etc/init.d/canvas_init #{command}"
         end
       end
     end
