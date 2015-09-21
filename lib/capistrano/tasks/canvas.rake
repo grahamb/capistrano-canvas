@@ -99,6 +99,7 @@ namespace :canvas do
     desc "Tasks that run after _updated_"
     task :after_updated do
       invoke 'canvas:load_notifications'
+      invoke 'canvas:reset_account_settings'
     end
 
     desc "Tasks that run after _published_"
