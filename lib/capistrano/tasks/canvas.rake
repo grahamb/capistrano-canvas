@@ -105,7 +105,7 @@ namespace :canvas do
       invoke 'canvas:migrate_predeploy'
       # invoke 'canvas:compile_assets'
       invoke 'canvas:move_brandable_css'
-      invoke 'symlink_brandable_css'
+      invoke 'canvas:symlink_brandable_css'
     end
 
     desc "Tasks that run after _updated_"
