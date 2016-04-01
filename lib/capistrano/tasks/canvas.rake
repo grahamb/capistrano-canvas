@@ -104,6 +104,7 @@ namespace :canvas do
       invoke 'canvas:symlink_canvasfiles'
       invoke 'canvas:migrate_predeploy'
       # invoke 'canvas:compile_assets'
+      invoke 'canvas:build_brand_configs'
       invoke 'canvas:move_brandable_css'
       invoke 'canvas:symlink_brandable_css'
     end
