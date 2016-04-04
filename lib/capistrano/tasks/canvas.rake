@@ -45,16 +45,6 @@ namespace :canvas do
     end
   end
 
-  desc "Move brandable_css"
-  task :move_brandable_css do
-    puts 'move_brandable_css is a no-op, define locally'
-  end
-
-  desc "Symlink brandable_css"
-  task :symlink_brandable_css do
-    puts 'symlink_brandable_css is a no-op, define locally'
-  end
-
   desc "Run predeploy db migration task"
   task :migrate_predeploy do
     on primary :db do
