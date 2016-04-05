@@ -92,9 +92,9 @@ namespace :canvas do
       invoke 'canvas:fix_owner'
       invoke 'canvas:symlink_canvasfiles'
       invoke 'canvas:migrate_predeploy'
-      invoke 'canvas:build_brand_configs'
-      invoke 'canvas:move_brandable_css'
-      invoke 'canvas:symlink_brandable_css'
+      invoke 'canvas:build_brand_configs' if Rake::Task.task_defined("canvas:build_brand_configs")
+      invoke 'canvas:move_brandable_css' if Rake::Task.task_defined("canvas:move_brandable_css")
+      invoke 'canvas:symlink_brandable_css' if Rake::Task.task_defined("canvas:symlink_brandable_css")
     end
 
     desc "Tasks that run after _updated_"
@@ -109,7 +109,7 @@ namespace :canvas do
       invoke 'deploy:restart'
       invoke 'canvas:delayed_jobs:restart'
       invoke 'canvas:log_deploy'
-      invoke 'canvas:cleanup_brandable_css'
+      invoke 'canvas:cleanup_brandable_css' if Rake::Task.task_defined("canvas:cleanup_brandable_css")
     end
 
   end
