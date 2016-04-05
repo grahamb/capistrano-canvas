@@ -109,7 +109,7 @@ namespace :canvas do
       invoke 'deploy:restart'
       invoke 'canvas:delayed_jobs:restart'
       invoke 'canvas:log_deploy'
-      invoke 'canvas:cleanup_brandable_css' if Rake::Task.task_defined("canvas:cleanup_brandable_css")
+      invoke 'canvas:cleanup_brandable_css' if Rake::Task.task_defined?("canvas:cleanup_brandable_css")
     end
 
   end
