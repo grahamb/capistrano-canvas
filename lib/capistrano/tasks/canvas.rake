@@ -88,6 +88,7 @@ namespace :canvas do
 
     desc "Tasks that need to run before _updated_"
     task :before_updated do
+      invoke 'bundler:install'
       invoke 'canvas:copy_config'
       invoke 'canvas:fix_owner'
       invoke 'canvas:symlink_canvasfiles'
